@@ -1,9 +1,24 @@
+import Sidebar from '../components/layout/Sidebar.jsx'
+import Header from '../components/layout/Header.jsx'
+import Hero from '../components/home/Hero.jsx'
+
 function Home() {
     return (
-        <main>
-            <h1>YupiYupi</h1>
-            <p>Головна сторінка працює</p>
-        </main>
+        <div className="app-layout">
+
+            <Sidebar />
+
+            <div className="page-content">
+
+                <Header />
+
+                <main className="main-content">
+                    <Hero />
+                </main>
+
+            </div>
+
+        </div>
     )
 }
 
