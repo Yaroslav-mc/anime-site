@@ -20,12 +20,15 @@ const communityAvatars = [
 function HomeSideColumn() {
     return (
         <aside className="home-side-column" aria-label="Дополнительные разделы">
-            <article className="community-card">
+            <a href="/community" className="community-card" aria-label="Перейти в сообщество">
                 <img className="side-card-background" src={communityBackground} alt="" aria-hidden="true" />
                 <div className="side-card-overlay" aria-hidden="true"></div>
 
                 <div className="community-content">
-                    <h2>Присоединяйся<br />к сообществу</h2>
+                    <h2>
+                        Присоединяйся<br />
+                        к сообществу
+                    </h2>
 
                     <p>
                         Обсуждения · Арты · Мемы<br />
@@ -45,12 +48,12 @@ function HomeSideColumn() {
                     </div>
                 </div>
 
-                <a href="/community" className="community-action" aria-label="Перейти в сообщество">
-                    <ArrowRight size={16} aria-hidden="true" />
-                </a>
-            </article>
+                <span className="side-card-action" aria-hidden="true">
+                    <ArrowRight size={16} />
+                </span>
+            </a>
 
-            <article className="shop-card">
+            <a href="/shop" className="shop-card" aria-label="Перейти в магазин">
                 <img className="side-card-background" src={shopBackground} alt="" aria-hidden="true" />
                 <div className="shop-card-overlay" aria-hidden="true"></div>
 
@@ -63,13 +66,12 @@ function HomeSideColumn() {
                         Фигурки · Постеры · Одежда<br />
                         Эксклюзивные коллекции
                     </p>
-
-                    <a href="/shop" className="shop-card-button">
-                        Перейти в магазин
-                        <ArrowRight size={13} aria-hidden="true" />
-                    </a>
                 </div>
-            </article>
+
+                <span className="side-card-action" aria-hidden="true">
+                    <ArrowRight size={16} />
+                </span>
+            </a>
         </aside>
     )
 }
