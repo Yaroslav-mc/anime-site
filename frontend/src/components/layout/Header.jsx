@@ -1,17 +1,18 @@
 import {
     Search,
     Bell,
-    ChevronDown
+    ChevronDown,
+    UserRound
 } from 'lucide-react'
 
+import { useAuth } from '../../context/AuthContext.jsx'
+
 function Header() {
+    const { user, isAuthenticated } = useAuth()
+
     return (
         <header className="header">
-            <form
-                className="header-search"
-                role="search"
-                onSubmit={(event) => event.preventDefault()}
-            >
+            <form className="header-search" role="search" onSubmit={(event) => event.preventDefault()}>
                 <Search size={20} aria-hidden="true" />
 
                 <input
@@ -20,57 +21,46 @@ function Header() {
                     aria-label="Поиск по сайту"
                 />
 
-                <span className="header-search-shortcut">
-                    Ctrl K
-                </span>
+                <kbd className="header-search-shortcut">Ctrl K</kbd>
             </form>
 
             <div className="header-right">
-                <div
-                    className="header-languages"
-                    role="group"
-                    aria-label="Выбор языка"
-                >
-                    <button type="button" className="active">
-                        RU
-                    </button>
-
-                    <button type="button">
-                        EN
-                    </button>
-
-                    <button type="button">
-                        UA
-                    </button>
+                <div className="header-languages" role="group" aria-label="Выбор языка">
+                    <button type="button" className="active" aria-pressed="true">RU</button>
+                    <button type="button" aria-pressed="false">EN</button>
+                    <button type="button" aria-pressed="false">UA</button>
                 </div>
 
-                <button
-                    type="button"
-                    className="header-notification"
-                    aria-label="Уведомления"
-                >
-                    <Bell size={21} aria-hidden="true" />
-                    <span className="notification-dot"></span>
-                </button>
+                {isAuthenticated ? (
+                    <>
+                        <button type="button" className="header-notification" aria-label="Уведомления">
+                            <Bell size={21} aria-hidden="true" />
+                            <span className="notification-dot" aria-hidden="true"></span>
+                        </button>
 
-                <button
-                    type="button"
-                    className="header-profile"
-                    aria-label="Открыть меню профиля"
-                >
-                    <img
-                        className="header-avatar"
-                        src="/images/avatar.webp"
-                        alt=""
-                    />
+                        <button type="button" className="header-profile" aria-label="Открыть меню профиля">
+                            {user.avatarUrl ? (
+                                <img className="header-avatar" src={user.avatarUrl} alt="" />
+                            ) : (
+                                <span className="header-avatar header-avatar-fallback" aria-hidden="true">
+                                    <UserRound size={21} />
+                                </span>
+                            )}
 
-                    <span className="header-profile-info">
-                        <strong>mindosik</strong>
-                        <span>Премиум</span>
-                    </span>
+                            <span className="header-profile-info">
+                                <strong>{user.username}</strong>
+                                <span>{user.plan}</span>
+                            </span>
 
-                    <ChevronDown size={18} aria-hidden="true" />
-                </button>
+                            <ChevronDown size={18} aria-hidden="true" />
+                        </button>
+                    </>
+                ) : (
+                    <div className="header-auth">
+                        <button type="button" className="header-login">Войти</button>
+                        <button type="button" className="header-register">Регистрация</button>
+                    </div>
+                )}
             </div>
         </header>
     )

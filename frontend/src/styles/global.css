@@ -1,4 +1,6 @@
 :root {
+    color-scheme: dark;
+
     --bg: #070a0f;
     --surface: #0d1118;
 
@@ -9,6 +11,8 @@
     --text-muted: #777e8d;
 
     --border: rgba(255, 255, 255, 0.06);
+
+    --sidebar-width: 190px;
 
     --font-main:
         'Montserrat Variable',
@@ -71,6 +75,11 @@ a {
 img {
     display: block;
     max-width: 100%;
+}
+
+:focus-visible {
+    outline: 2px solid var(--pink);
+    outline-offset: 3px;
 }
 
 #root {
