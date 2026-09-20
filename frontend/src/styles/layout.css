@@ -467,3 +467,293 @@
         gap: 6px;
     }
 }
+
+
+.header,
+.main-content {
+    width: 100%;
+    max-width: 3200px;
+
+    margin: 0 auto;
+}
+
+.app-layout {
+    --sidebar-width: clamp(145px, 9.5vw, 220px);
+}
+
+@media (min-width: 2400px) {
+    .sidebar {
+        padding: 18px 16px;
+    }
+
+    .sidebar-logo {
+        margin-bottom: 22px;
+    }
+
+    .sidebar-logo-title {
+        font-size: 34px;
+    }
+
+    .sidebar-logo-subtitle {
+        font-size: 9px;
+    }
+
+    .sidebar-link {
+        height: 50px;
+
+        gap: 14px;
+
+        font-size: 15px;
+    }
+
+    .sidebar-link svg {
+        width: 21px;
+        height: 21px;
+    }
+
+    .sidebar-promo {
+        min-height: 175px;
+    }
+
+    .sidebar-promo-text {
+        font-size: 15px;
+    }
+
+    .sidebar-promo-text strong {
+        font-size: 18px;
+    }
+
+    .header {
+        height: 72px;
+
+        padding: 8px 18px;
+
+        gap: 18px;
+    }
+
+    .header-search {
+        height: 46px;
+
+        padding: 0 16px;
+    }
+
+    .header-search input {
+        font-size: 14px;
+    }
+
+    .header-search-shortcut {
+        font-size: 12px;
+    }
+
+    .header-languages {
+        height: 44px;
+    }
+
+    .header-languages button {
+        min-width: 42px;
+        height: 34px;
+
+        font-size: 13px;
+    }
+
+    .header-login,
+    .header-register {
+        height: 42px;
+
+        padding: 0 18px;
+
+        font-size: 13px;
+    }
+
+    .main-content {
+        padding: 0 18px 20px;
+    }
+}
+
+.footer {
+    width: 100%;
+    max-width: 3200px;
+
+    margin: 0 auto;
+    padding: 12px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 28px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-muted);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    flex-shrink: 0;
+}
+
+.footer-logo {
+    font-family: var(--font-brand);
+
+    color: var(--text-primary);
+
+    font-size: 20px;
+    font-weight: 900;
+
+    letter-spacing: -1px;
+}
+
+.footer-logo span {
+    color: var(--pink);
+}
+
+.footer-brand p {
+    margin: 0;
+
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: clamp(18px, 2vw, 34px);
+}
+
+.footer-nav a {
+    color: var(--text-muted);
+
+    font-size: 9px;
+    white-space: nowrap;
+
+    transition: color 0.2s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--pink);
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    flex-shrink: 0;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.footer-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--text-secondary);
+
+    font-size: 17px;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.footer-socials a:hover {
+    color: var(--pink);
+
+    transform: translateY(-2px);
+}
+
+.footer-divider {
+    width: 1px;
+    height: 28px;
+
+    background: var(--border);
+}
+
+.footer-love {
+    margin: 0;
+
+    color: var(--text-muted);
+
+    font-size: 8px;
+    line-height: 1.45;
+    text-align: right;
+    white-space: nowrap;
+}
+
+.footer-heart {
+    color: var(--text-secondary);
+
+    flex-shrink: 0;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.footer-heart:hover {
+    color: var(--pink);
+
+    transform: scale(1.12);
+}
+
+@media (max-width: 1200px) {
+    .footer {
+        flex-wrap: wrap;
+        justify-content: center;
+
+        padding: 18px;
+    }
+
+    .footer-brand {
+        flex: 1;
+    }
+
+    .footer-nav {
+        order: 3;
+
+        width: 100%;
+
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 760px) {
+    .footer {
+        flex-direction: column;
+
+        gap: 16px;
+    }
+
+    .footer-brand {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .footer-nav {
+        gap: 14px;
+    }
+
+    .footer-right {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-love {
+        text-align: center;
+    }
+}

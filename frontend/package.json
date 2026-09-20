@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-      "dev": "vite",
-      "build": "vite build",
-      "lint": "eslint .",
-      "preview": "vite preview",
-      "save": "node scripts/git-save.mjs"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "save": "node scripts/git-save.mjs"
   },
   "dependencies": {
     "@fontsource-variable/montserrat": "^5.3.0",
@@ -16,7 +16,8 @@
     "@fontsource-variable/nunito": "^5.3.0",
     "lucide-react": "^1.47.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "react-icons": "^5.7.0"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

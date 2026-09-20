@@ -1255,3 +1255,291 @@
         grid-column: auto;
     }
 }
+
+.home-grid,
+.home-bottom-row {
+    --side-column-width: clamp(360px, 18vw, 460px);
+}
+
+.home-grid {
+    --community-height: clamp(120px, 6.25vw, 160px);
+    --shop-height: clamp(90px, 4.7vw, 120px);
+    --side-gap: clamp(8px, 0.45vw, 12px);
+
+    --home-row-height: calc(
+        var(--community-height) +
+        var(--shop-height) +
+        var(--side-gap)
+    );
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        var(--side-column-width);
+
+    grid-template-rows: var(--home-row-height);
+
+    gap: clamp(14px, 0.8vw, 20px);
+}
+
+.home-side-column {
+    width: var(--side-column-width);
+    height: var(--home-row-height);
+
+    grid-template-rows:
+        var(--community-height)
+        var(--shop-height);
+
+    gap: var(--side-gap);
+}
+
+.community-card {
+    height: var(--community-height);
+}
+
+.shop-card {
+    height: var(--shop-height);
+}
+
+.popular-section {
+    height: var(--home-row-height);
+
+    grid-template-rows:
+        clamp(42px, 2.3vw, 50px)
+        minmax(0, 1fr);
+}
+
+.popular-grid {
+    gap: clamp(8px, 0.55vw, 12px);
+}
+
+.anime-card h3 {
+    font-size: clamp(12px, 0.65vw, 14px);
+}
+
+.anime-card p {
+    font-size: clamp(10px, 0.5vw, 11px);
+}
+
+.anime-card-rating {
+    font-size: clamp(11px, 0.55vw, 13px);
+}
+
+.anime-card-add {
+    width: clamp(30px, 1.6vw, 36px);
+    height: clamp(30px, 1.6vw, 36px);
+}
+
+.community-content h2 {
+    font-size: clamp(16px, 0.85vw, 20px);
+}
+
+.community-content p {
+    font-size: clamp(8px, 0.45vw, 10px);
+}
+
+.community-members span {
+    font-size: clamp(8px, 0.42vw, 10px);
+}
+
+.shop-content h2 {
+    font-size: clamp(17px, 0.9vw, 21px);
+}
+
+.shop-content p {
+    font-size: clamp(9px, 0.45vw, 10px);
+}
+
+.side-card-action {
+    width: clamp(30px, 1.6vw, 36px);
+    height: clamp(30px, 1.6vw, 36px);
+}
+
+.home-bottom-row {
+    margin-top: clamp(10px, 0.6vw, 16px);
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        clamp(280px, 14vw, 340px)
+        var(--side-column-width);
+
+    align-items: stretch;
+
+    gap: clamp(14px, 0.8vw, 20px);
+}
+
+.collection-banner {
+    height: auto;
+
+    aspect-ratio: 6 / 1;
+}
+
+.watching-panel,
+.activity-panel {
+    height: auto;
+}
+
+.collection-banner-content {
+    padding: clamp(18px, 1.15vw, 26px);
+}
+
+.collection-banner-content h2 {
+    font-size: clamp(18px, 1vw, 22px);
+}
+
+.collection-banner-content p {
+    font-size: clamp(10px, 0.55vw, 12px);
+}
+
+.collection-banner-action {
+    height: clamp(30px, 1.7vw, 36px);
+
+    font-size: clamp(9px, 0.5vw, 11px);
+}
+
+.watching-panel,
+.activity-panel {
+    padding: clamp(12px, 0.75vw, 18px);
+}
+
+.bottom-panel-header h2 {
+    font-size: clamp(12px, 0.65vw, 15px);
+}
+
+.watching-position,
+.watching-title {
+    font-size: clamp(9px, 0.48vw, 11px);
+}
+
+.watching-views {
+    font-size: clamp(8px, 0.45vw, 10px);
+}
+
+.activity-list p {
+    font-size: clamp(8px, 0.45vw, 10px);
+}
+
+.activity-list time {
+    font-size: clamp(7px, 0.4vw, 9px);
+}
+
+@media (min-width: 2400px) {
+    .hero {
+        padding: 36px 42px;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            360px;
+
+        gap: 24px;
+    }
+
+    .hero-content {
+        max-width: 760px;
+    }
+
+    .hero-title {
+        font-size: 88px;
+    }
+
+    .hero-eyebrow {
+        font-size: 11px;
+    }
+
+    .hero-description {
+        font-size: 18px;
+    }
+
+    .hero-primary-button {
+        height: 48px;
+
+        padding: 0 24px;
+
+        font-size: 13px;
+    }
+
+    .hero-play-button {
+        width: 48px;
+        height: 48px;
+    }
+
+    .hero-stat dt {
+        font-size: 21px;
+    }
+
+    .hero-stat dd {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .home-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .popular-section {
+        height: auto;
+
+        grid-template-rows: auto auto;
+    }
+
+    .home-side-column {
+        width: 100%;
+        height: auto;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: 120px;
+    }
+
+    .community-card,
+    .shop-card {
+        height: 120px;
+    }
+
+    .home-bottom-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .collection-banner {
+        grid-column: 1 / -1;
+
+        aspect-ratio: 5 / 1;
+    }
+
+    .watching-panel,
+    .activity-panel {
+        height: 160px;
+    }
+}
+
+@media (max-width: 760px) {
+    .home-side-column {
+        grid-template-columns: 1fr;
+        grid-template-rows: 120px 90px;
+    }
+
+    .community-card {
+        height: 120px;
+    }
+
+    .shop-card {
+        height: 90px;
+    }
+
+    .home-bottom-row {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-banner {
+        grid-column: auto;
+
+        min-height: 160px;
+
+        aspect-ratio: auto;
+    }
+
+    .watching-panel,
+    .activity-panel {
+        height: 160px;
+    }
+}
