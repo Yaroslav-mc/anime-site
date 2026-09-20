@@ -99,7 +99,7 @@ const readline = createInterface({
 })
 
 const answer = await readline.question(
-    '\nСохранить изменения и отправить на GitHub? [y/N]: '
+    '\nСохранить изменения и отправить на GitHub? [Y/N]: '
 )
 
 readline.close()
