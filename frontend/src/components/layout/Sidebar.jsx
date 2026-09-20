@@ -10,7 +10,7 @@ import {
     Settings
 } from 'lucide-react'
 
-import { useAuth } from '../../context/AuthContext.jsx'
+import { useAuth } from '../../context/auth.js'
 
 const mainLinks = [
     { label: 'Главная', href: '/', icon: House, active: true },

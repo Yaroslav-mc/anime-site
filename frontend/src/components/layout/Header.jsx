@@ -5,7 +5,7 @@ import {
     UserRound
 } from 'lucide-react'
 
-import { useAuth } from '../../context/AuthContext.jsx'
+import { useAuth } from '../../context/auth.js'
 
 function Header() {
     const { user, isAuthenticated } = useAuth()
