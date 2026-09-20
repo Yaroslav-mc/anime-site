@@ -24,7 +24,7 @@ function Sidebar() {
                 </div>
             </div>
 
-            <nav className="sidebar-menu">
+            <nav className="sidebar-menu" aria-label="Основная навигация">
 
                 <a href="#" className="sidebar-link active">
                     <House size={21} />
@@ -58,9 +58,9 @@ function Sidebar() {
 
             </nav>
 
-            <div className="sidebar-divider"></div>
+            <hr className="sidebar-divider" />
 
-            <nav className="sidebar-menu sidebar-menu-bottom">
+            <nav className="sidebar-menu sidebar-menu-bottom" aria-label="Пользовательская навигация">
 
                 <a href="#" className="sidebar-link">
                     <Bookmark size={21} />

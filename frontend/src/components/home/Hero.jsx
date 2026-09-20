@@ -1,16 +1,22 @@
 import { ArrowRight, Play } from 'lucide-react'
 
+import heroBackground from '../../assets/images/home/hero/hero-background.jpg'
+import storyOne from '../../assets/images/home/hero/story-1.jpg'
+import storyTwo from '../../assets/images/home/hero/story-2.jpg'
+import storyThree from '../../assets/images/home/hero/story-3.jpg'
+
 function Hero() {
     return (
-        <section className="hero">
+        <section className="hero" aria-labelledby="hero-title">
+            <img className="hero-background" src={heroBackground} alt="" aria-hidden="true" fetchPriority="high" />
+            <div className="hero-overlay" aria-hidden="true"></div>
 
             <div className="hero-content">
-
                 <p className="hero-eyebrow">
                     ТВОЙ МИР. БОЛЬШЕ, ЧЕМ ПРОСТО АНИМЕ
                 </p>
 
-                <h1 className="hero-title">
+                <h1 id="hero-title" className="hero-title">
                     Yupi<span>Yupi</span>
                 </h1>
 
@@ -19,90 +25,90 @@ function Hero() {
                 </p>
 
                 <div className="hero-actions">
-
-                    <button className="hero-primary-button">
+                    <button type="button" className="hero-primary-button">
                         Начать путешествие
-                        <ArrowRight size={19} />
+                        <ArrowRight size={19} aria-hidden="true" />
                     </button>
 
-                    <button className="hero-play-button">
-                        <Play size={20} fill="currentColor" />
+                    <button type="button" className="hero-play-button" aria-label="Воспроизвести трейлер YupiYupi">
+                        <Play size={20} fill="currentColor" aria-hidden="true" />
                     </button>
 
                     <div className="hero-trailer-text">
                         <span>Трейлер</span>
                         <strong>YupiYupi</strong>
                     </div>
-
                 </div>
 
-                <div className="hero-stats">
-
+                <dl className="hero-stats">
                     <div className="hero-stat">
-                        <strong>50K+</strong>
-                        <span>Пользователей</span>
+                        <dt>50K+</dt>
+                        <dd>Пользователей</dd>
                     </div>
 
                     <div className="hero-stat">
-                        <strong>10K+</strong>
-                        <span>Тайтлов</span>
+                        <dt>10K+</dt>
+                        <dd>Тайтлов</dd>
                     </div>
 
                     <div className="hero-stat">
-                        <strong>100K+</strong>
-                        <span>Участников сообщества</span>
+                        <dt>100K+</dt>
+                        <dd>Участников сообщества</dd>
                     </div>
 
                     <div className="hero-stat">
-                        <strong>∞</strong>
-                        <span>Больше хороших историй</span>
+                        <dt>∞</dt>
+                        <dd>Больше хороших историй</dd>
                     </div>
-
-                </div>
-
+                </dl>
             </div>
 
-
-            <div className="hero-side">
-
+            <aside className="hero-side" aria-label="Рекомендуемые истории">
                 <article className="hero-story">
-                    <span>
+                    <img src={storyOne} alt="" aria-hidden="true" />
+                    <div className="hero-story-overlay" aria-hidden="true"></div>
+
+                    <p>
                         Иногда<br />
                         одной серии<br />
                         достаточно...
-                    </span>
+                    </p>
 
-                    <button>
-                        <Play size={16} />
+                    <button type="button" aria-label="Воспроизвести первую историю">
+                        <Play size={16} aria-hidden="true" />
                     </button>
                 </article>
 
                 <article className="hero-story">
-                    <span>
+                    <img src={storyTwo} alt="" aria-hidden="true" />
+                    <div className="hero-story-overlay" aria-hidden="true"></div>
+
+                    <p>
                         Мир<br />
                         в котором<br />
                         ты не один
-                    </span>
+                    </p>
 
-                    <button>
-                        <Play size={16} />
+                    <button type="button" aria-label="Воспроизвести вторую историю">
+                        <Play size={16} aria-hidden="true" />
                     </button>
                 </article>
 
                 <article className="hero-story">
-                    <span>
+                    <img src={storyThree} alt="" aria-hidden="true" />
+                    <div className="hero-story-overlay" aria-hidden="true"></div>
+
+                    <p>
                         Новые<br />
                         горизонты<br />
                         ждут
-                    </span>
+                    </p>
 
-                    <button>
-                        <Play size={16} />
+                    <button type="button" aria-label="Воспроизвести третью историю">
+                        <Play size={16} aria-hidden="true" />
                     </button>
                 </article>
-
-            </div>
-
+            </aside>
         </section>
     )
 }

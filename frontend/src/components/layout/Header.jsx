@@ -7,8 +7,12 @@ import {
 function Header() {
     return (
         <header className="header">
-            <div className="header-search">
-                <Search size={20} />
+            <form
+                className="header-search"
+                role="search"
+                onSubmit={(event) => event.preventDefault()}
+            >
+                <Search size={20} aria-hidden="true" />
 
                 <input
                     type="search"
@@ -19,28 +23,45 @@ function Header() {
                 <span className="header-search-shortcut">
                     Ctrl K
                 </span>
-            </div>
+            </form>
 
             <div className="header-right">
-                <nav className="header-languages" aria-label="Выбор языка">
-                    <button className="active">RU</button>
-                    <button>EN</button>
-                    <button>UA</button>
-                </nav>
+                <div
+                    className="header-languages"
+                    role="group"
+                    aria-label="Выбор языка"
+                >
+                    <button type="button" className="active">
+                        RU
+                    </button>
+
+                    <button type="button">
+                        EN
+                    </button>
+
+                    <button type="button">
+                        UA
+                    </button>
+                </div>
 
                 <button
+                    type="button"
                     className="header-notification"
                     aria-label="Уведомления"
                 >
-                    <Bell size={21} />
+                    <Bell size={21} aria-hidden="true" />
                     <span className="notification-dot"></span>
                 </button>
 
-                <button className="header-profile">
+                <button
+                    type="button"
+                    className="header-profile"
+                    aria-label="Открыть меню профиля"
+                >
                     <img
                         className="header-avatar"
                         src="/images/avatar.webp"
-                        alt="Аватар пользователя"
+                        alt=""
                     />
 
                     <span className="header-profile-info">
@@ -48,7 +69,7 @@ function Header() {
                         <span>Премиум</span>
                     </span>
 
-                    <ChevronDown size={18} />
+                    <ChevronDown size={18} aria-hidden="true" />
                 </button>
             </div>
         </header>
